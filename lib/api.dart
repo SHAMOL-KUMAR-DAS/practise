@@ -12,7 +12,7 @@ class _API_CallState extends State<API_Call> {
 
   List Data;
   Future<bool> _getData() async{
-    String Url = 'https://api.sakkhar.com/api/product';
+    String Url = 'https://api.sakkhar.com/api/login';
     var response = await http.get(Url);
     setState(() {
       Data = json.decode(response.body.toString());
@@ -28,17 +28,20 @@ class _API_CallState extends State<API_Call> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView.builder(
-        itemCount: Data.length == null? 0:Data.length,
+        itemCount: Data == null? 0:Data.length,
+          //null == _users ? 0 : _users.length
           itemBuilder: (BuildContext context, int index){
             return ListTile(
-              title: Text('Brand: '+Data[index]['product_brand']),
+              title: Text('Brand: '+Data[index]['name']),
+              //Text('Brand: '+Data[index]['product_brand']),
               subtitle: Column(
                 //mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Name: '+Data[index]['product_name']),
-                  Text('Quantity: '+Data[index]['quantity']),
-                  Text('Created At: '+Data[index]['created_at'])
+                  Text('Brand: '+Data[index]['email']),
+                  // Text('Name: '+Data[index]['product_name']),
+                  // Text('Quantity: '+Data[index]['quantity']),
+                  // Text('Created At: '+Data[index]['created_at'])
                 ],
               ),
             );

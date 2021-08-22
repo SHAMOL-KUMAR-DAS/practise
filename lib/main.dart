@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:practise/api.dart';
 import 'package:practise/bottomNavigation.dart';
 import 'package:practise/one.dart';
+import 'package:practise/JsonParseDemo.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,7 +16,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: API_Call(),
+      home: JsonParseDemo(),
+      //home: API_Call(),
       //home: BottomNabigation(),
       debugShowCheckedModeBanner: false,
     );
