@@ -3,10 +3,12 @@ import 'package:practise/api.dart';
 import 'package:practise/bottomNavigation.dart';
 import 'package:practise/calculation.dart';
 import 'package:practise/design.dart';
+import 'package:practise/get_data.dart';
 import 'package:practise/one.dart';
 import 'package:practise/JsonParseDemo.dart';
 
 import 'package:practise/cal.dart';
+import 'package:practise/post_data.dart';
 
 void main() {
   runApp(MyApp());
@@ -21,9 +23,12 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.red,
       ),
       //home: JsonParseDemo(),
+      //home: Installment_Page(),
+      home: Add_Data(),
+      //home: LoginPage(),
       //home: API_Call(),
       //home: Design(),
-      home: Cal(),
+      //home: Cal(),
       //home: Shamol(),
       //home: BottomNabigation(),
       debugShowCheckedModeBanner: false,
