@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:practise/Provider/design_image.dart';
 import 'package:practise/api.dart';
 import 'package:practise/bottomNavigation.dart';
 import 'package:practise/calculation.dart';
@@ -9,9 +10,16 @@ import 'package:practise/JsonParseDemo.dart';
 
 import 'package:practise/cal.dart';
 import 'package:practise/post_data.dart';
+import 'package:provider/provider.dart';
+
+import 'Provider/Get_Image.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(MultiProvider(
+    providers: [
+      ChangeNotifierProvider(create: (_)=>Get_Image(),),
+    ],
+      child: MyApp()));
 }
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -24,7 +32,8 @@ class MyApp extends StatelessWidget {
       ),
       //home: JsonParseDemo(),
       //home: Installment_Page(),
-      home: Add_Data(),
+      //home: Add_Data(),
+      home: Student_Information(),
       //home: LoginPage(),
       //home: API_Call(),
       //home: Design(),
