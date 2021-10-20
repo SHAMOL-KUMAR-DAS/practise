@@ -7,12 +7,12 @@ import 'package:image_picker/image_picker.dart';
 import 'package:practise/Provider/Get_Image.dart';
 import 'package:provider/provider.dart';
 
-class Student_Information extends StatefulWidget {
+class Design_Image extends StatefulWidget {
   @override
-  _Student_InformationState createState() => _Student_InformationState();
+  _Design_ImageState createState() => _Design_ImageState();
 }
 
-class _Student_InformationState extends State<Student_Information> {
+class _Design_ImageState extends State<Design_Image> {
 
   @override
   Widget build(BuildContext context) {

@@ -41,6 +41,8 @@ dependencies:
   email_auth:
   firebase_storage:
   intl: ^0.17.0
+  azlistview: ^1.1.1 #A_Z ListView
+  carousel_slider: ^4.0.0 # Carousel Slider Scrolling
 
 
 dev_dependencies:

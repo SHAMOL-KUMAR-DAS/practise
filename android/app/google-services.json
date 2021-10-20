@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "366281653183",
+    "project_id": "practise-5f01a",
+    "storage_bucket": "practise-5f01a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:366281653183:android:8b365a396b7cbfe45fff0a",
+        "android_client_info": {
+          "package_name": "com.shamol.practise"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "366281653183-gkv5pqj73uhgv1v578h7hgmdo4n2gpb8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.shamol.practise",
+            "certificate_hash": "089642a316968d3a84ca47be0402ba192273e733"
+          }
+        },
+        {
+          "client_id": "366281653183-f89sru0brqr9rl41pfbaq127s9n3kfv3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1S_8peLKsuZYLp4xR7MRG72jR-IISioE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "366281653183-f89sru0brqr9rl41pfbaq127s9n3kfv3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

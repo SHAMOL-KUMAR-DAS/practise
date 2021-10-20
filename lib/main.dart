@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:practise/AtoZSorting/alphabet_scroll_page.dart';
+import 'package:practise/CarouselSlider/carousel_slider.dart';
 import 'package:practise/Provider/design_image.dart';
+import 'package:practise/Sign_In/sign_in.dart';
+import 'package:practise/TabBar_And_TabBarView/tabbar.dart';
 import 'package:practise/api.dart';
 import 'package:practise/bottomNavigation.dart';
 import 'package:practise/calculation.dart';
@@ -33,7 +37,11 @@ class MyApp extends StatelessWidget {
       //home: JsonParseDemo(),
       //home: Installment_Page(),
       //home: Add_Data(),
-      home: Student_Information(),
+      //home: Design_Image(),
+      //home: Sign_In(),
+      //home: AlphabetScrollPage(),
+      //home: TabExample(),
+      home: Carousel(),
       //home: LoginPage(),
       //home: API_Call(),
       //home: Design(),
