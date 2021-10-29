@@ -16,6 +16,8 @@ import 'package:practise/cal.dart';
 import 'package:practise/post_data.dart';
 import 'package:provider/provider.dart';
 
+
+import 'API/get_data.dart';
 import 'Provider/Get_Image.dart';
 
 void main() {
@@ -41,7 +43,8 @@ class MyApp extends StatelessWidget {
       //home: Sign_In(),
       //home: AlphabetScrollPage(),
       //home: TabExample(),
-      home: Carousel(),
+      //home: Carousel(),
+      home: GetData(),
       //home: LoginPage(),
       //home: API_Call(),
       //home: Design(),
