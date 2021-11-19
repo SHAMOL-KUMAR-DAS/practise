@@ -12,7 +12,7 @@ class _API_CallState extends State<API_Call> {
   List Data;
   Future<bool> _getData() async {
     String Url = 'https://fluttertestproject.plasmafreelancingteam.com/api.php';
-    var response = await http.get(Url);
+    var response = await http.get(Uri.parse(Url));
     setState(() {
       Data = json.decode(response.body);
     });

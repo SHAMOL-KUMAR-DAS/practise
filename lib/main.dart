@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:practise/API_LOGIN/design.dart';
 import 'package:practise/AtoZSorting/alphabet_scroll_page.dart';
 import 'package:practise/CarouselSlider/carousel_slider.dart';
 import 'package:practise/Provider/design_image.dart';
@@ -44,7 +45,8 @@ class MyApp extends StatelessWidget {
       //home: AlphabetScrollPage(),
       //home: TabExample(),
       //home: Carousel(),
-      home: GetData(),
+      //home: GetData(),
+      home: DesignPage(''),
       //home: LoginPage(),
       //home: API_Call(),
       //home: Design(),

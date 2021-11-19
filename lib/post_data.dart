@@ -10,7 +10,7 @@ class Add_Data extends StatefulWidget {
 Future<PostDataModel> createUser(String username, String useremail, String usermobile, String userimage) async{
   final String apiUrl = "https://fluttertestproject.plasmafreelancingteam.com/api.php";
 
-  final response = await http.post(apiUrl, body: {
+  final response = await http.post(Uri.parse(apiUrl), body: {
     "name": username,
     "email": useremail,
     "Mobile": usermobile,

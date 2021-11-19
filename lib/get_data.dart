@@ -34,7 +34,7 @@ class _Installment_PageState extends State<Installment_Page> {
 
   List<Result> installment;
   Future getData() async{
-    final installmentresponse = await http.get('https://fluttertestproject.plasmafreelancingteam.com/api.php');
+    final installmentresponse = await http.get(Uri.parse('https://fluttertestproject.plasmafreelancingteam.com/api.php'));
     //post = input/add
     //get = view
     //delete = delete
