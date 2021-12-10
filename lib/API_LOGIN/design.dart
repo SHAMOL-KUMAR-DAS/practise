@@ -15,24 +15,15 @@ class _DesignPageState extends State<DesignPage> {
   var mobile = TextEditingController();
   var pin = TextEditingController();
 
-  //SharedPreferences prefs = SharedPreferences.getInstance();
-  Future readAndSet() async{
-    SharedPreferences preferences = await SharedPreferences.getInstance();
-    var _token = preferences.getString('token');
-    print('Tokens: $_token');
+  Future getValue() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    var _token = prefs.getString('token' ?? 'Fail');
+    var _tokenType = prefs.getString('tokenType' ?? 'Fail');
+    var _expiresIn = prefs.getString('expiresIn' ?? 0);
 
-    if(_token == '0'){
-      print('Not Valid');
-    }
-    else{
-      print('Valid');
-    }
-  }
-
-  @override
-  void initState(){
-    readAndSet();
-    super.initState();
+    print('Token: $_token');
+    print('Token Type: $_tokenType');
+    print('Expires In: $_expiresIn');
   }
 
   @override
@@ -42,46 +33,72 @@ class _DesignPageState extends State<DesignPage> {
         title: Text('API Login'),
         centerTitle: true,
       ),
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 25, left: 25, right: 25),
-            child: TextFormField(
+      body: Container(
+        padding: EdgeInsets.only(left: 50, right: 50, top: 20),
+        child: Column(
+          children: [
+
+            TextFormField(
               controller: mobile,
+              maxLength: 11,
               decoration: InputDecoration(
+                // border: OutlineInputBorder(
+                //   borderSide: BorderSide(
+                //     color: Colors.teal,
+                //     width: 3
+                //   )
+                // ),
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.teal,
+                    width: 3
+                  )
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20),
+                  borderSide: BorderSide(
+                    color: Colors.teal,
+                    width: 3
+                  )
+                ),
+                counter: Offstage(),
                 hintText: 'Please Enter Phone'
               ),
             ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(top: 25, left: 25, right: 25),
-            child: TextFormField(
-              controller: pin,
-              decoration: InputDecoration(
-                hintText: 'Please Enter PIN'
+
+            Padding(
+              padding: EdgeInsets.only(top: 25, bottom: 100),
+              child: TextFormField(
+                controller: pin,
+                maxLength: 4,
+                decoration: InputDecoration(
+                  counter: Offstage(),
+                  hintText: 'Please Enter PIN'
+                ),
               ),
             ),
-          ),
-          SizedBox(height: MediaQuery.of(context).size.height * 0.1,),
-          FlatButton(
-            color: Colors.teal,
-              onPressed: (){
-                ApiLogin(context,mobile.text, pin.text);
 
-                mobile.text = '';
-                pin.text = '';
-                //readAndSet();
-                if(widget.token == 0){
-                  print('Not Valid');
-                }
-                else{
-                  print('Valid');
-                }
-              },
-              child: Text('Login',style: TextStyle(
-                color: Colors.white
-              ),))
-        ],
+            FlatButton(
+              color: Colors.teal,
+                minWidth: MediaQuery.of(context).size.width * 0.8,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20)
+                ),
+                onPressed: ()async{
+                  ApiLogin(context,mobile.text, pin.text);
+                  SharedPreferences prefs = await SharedPreferences.getInstance();
+                  var _token = prefs.getString('token' ?? 'Fail');
+                  var _tokenType = prefs.getString('tokenType' ?? 'Fail');
+                  var _expiresIn = prefs.getString('expiresIn' ?? 0);
+
+                  print('Token Type********: $_tokenType');
+                  print('Expires In********: $_expiresIn');
+                },
+                child: Text('Login',style: TextStyle(
+                  color: Colors.white
+                ),))
+          ],
+        ),
       ),
     );
   }

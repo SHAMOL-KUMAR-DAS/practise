@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:http/http.dart' as http;
 import 'package:practise/API_LOGIN/design.dart';
 import 'package:practise/API_LOGIN/fail.dart';
@@ -27,16 +28,32 @@ Future<dynamic> ApiLogin(BuildContext context, String _mobile, _pin)async {
   if (response.statusCode == 200) {
     LoginModel loginModel = loginModelFromMap(response.body);
     //return LoginModel.fromMap(jsonDecode(response.body));
-    print(loginModel.accessToken);
+
     preferences.setString('token', loginModel.accessToken);
+    preferences.setString('tokenType', loginModel.tokenType);
+    preferences.setString('expiresIn', loginModel.expiresIn.toString());
     //return loginModel;
     return Navigator.push(context, MaterialPageRoute(builder: (context)=>SuccessPage()));
 
   } else {
+    // return       Fluttertoast.showToast(
+    //     msg:
+    //     "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    //     toastLength: Toast.LENGTH_LONG,
+    //     gravity: ToastGravity.BOTTOM,
+    //     backgroundColor: Colors.black,
+    //     textColor: Colors.red,
+    //     fontSize: 16.0);
     throw Exception(
-      Navigator.push(context, MaterialPageRoute(builder: (context) => FailPage()))
-      //preferences.setString('token', '0'),
-      //'Not Valid'
+      // Fluttertoast.showToast(
+      //     msg: 'Please Enter Correct E-Mail or Password',
+      //   toastLength: Toast.LENGTH_SHORT
+      // )
+      showDialog(context: context, builder: (BuildContext context){
+        return AlertDialog(
+          title: Text('Please Enter Correct E-Mail/Password'),
+        );
+      })
     );
   }
 }

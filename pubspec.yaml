@@ -43,12 +43,16 @@ dependencies:
   intl: ^0.17.0
   azlistview: ^1.1.1 #A_Z ListView
   carousel_slider: ^4.0.0 # Carousel Slider Scrolling
+  fluttertoast: ^8.0.8
+  flutter_local_notifications: ^5.0.0+4
+  flutter_share: ^2.0.0
+  documents_picker: ^1.0.0
+  google_fonts: ^2.1.0
 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  shared_preferences: any
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
